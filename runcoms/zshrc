@@ -12,3 +12,9 @@ fi
 
 # Customize to your needs...
 export PATH=$PATH:/usr/local/go/bin
+export PATH="/home/ujjwal/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+alias git-your-shit-together='git fetch upstream; git rebase upstream/master; git push origin master'
+alias baby-i-need-space="aptitude -O installsize -F'%p %I' search '~i'"
+alias xampp="sudo /opt/lampp/xampp"

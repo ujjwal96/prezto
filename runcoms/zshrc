@@ -11,10 +11,31 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export PATH=$PATH:$HOME/.local/bin
+
+# Golang
 export PATH=$PATH:/usr/local/go/bin
+
+# Pyenv
 export PATH="/home/ujjwal/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# TF models
+export PYTHONPATH="$HOME/models/research:$HOME/models/research/slim"
+
+# Ruby
+export PATH=$PATH:/home/ujjwal/.gem/ruby/2.6.0/bin
+
+# Node
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+
+# Alias
 alias git-your-shit-together='git fetch upstream; git rebase upstream/master; git push origin master'
 alias baby-i-need-space="aptitude -O installsize -F'%p %I' search '~i'"
 alias xampp="sudo /opt/lampp/xampp"
+alias vi="nvim"
+alias arsenal-start="$HOME/arsenal/start"
+alias arsenal-connect="$HOME/arsenal/connect"
